@@ -1,0 +1,21 @@
+class String_Parser(str):
+    def __init__(self, given_string):
+        self.string = given_string
+    
+    def reverse_string(self):
+        return self.string[::-1]
+    
+    def vowel_remover(self):
+        c_string = ''.join([ch for ch in self.string if ch not in ['a', 'e', 'i', 'o', 'u']])
+        return c_string
+    
+    def string_to_int(self):
+        return sum([ord(char) for char in self.string])
+    
+    
+if __name__ == "__main__":
+    name = 'sreenivasarao ineni'
+    sp = String_Parser(name)
+    print(f"print the reverse string from the given string: {sp.reverse_string()}")
+    print(f"print the string after removing vowels from the given string: {sp.vowel_remover()}")
+    print(f"print the sum of unicodes of the string charactors from the given string: {sp.string_to_int()}")
